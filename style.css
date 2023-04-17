@@ -76,23 +76,71 @@ i {
 }
 .gallery .images {
   gap: 15px;
-  columns: 5 340px;
-  margin-top: 40px;
   max-width: 95%;
-}
-.images .card {
+  margin-top: 40px;
+  columns: 5 340px;
   list-style: none;
+}
+.gallery .images .card {
+  display: flex;
+  cursor: pointer;
+  overflow: hidden;
+  position: relative;
   margin-bottom: 14px;
   border-radius: 4px;
 }
-.images img {
+.gallery .images img {
   width: 100%;
+  z-index: 2;
+  position: relative;
+}
+.images .details {
+  position: absolute;
+  z-index: 4;
+  width: 100%;
+  bottom: -100px;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px;
+  justify-content: space-between;
+  transition: bottom 0.1s ease;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+}
+.images li:hover .details {
+  bottom: 0;
+}
+.photographer {
+  color: #fff;
+  display: flex;
+  align-items: center;
+}
+.photographer i {
+  font-size: 1.4rem;
+  margin-right: 10px;
+}
+.photographer span {
+  font-size: 1.05rem;
+}
+button,
+i {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: 0.2s ease;
+}
+.details button {
+  background: #fff;
+  font-size: 1.1rem;
+  padding: 3px 8px;
+}
+.details .download-btn:hover {
+  background: #f2f2f2;
 }
 .gallery .load-more {
-  margin: 50px 0;
   color: #fff;
-  cursor: pointer;
+  background: #8a6cff;
+  margin: 50px 0;
   font-size: 1.2rem;
   padding: 12px 27px;
-  background: #8a6cff;
 }
